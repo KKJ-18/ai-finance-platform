@@ -3,7 +3,7 @@
 **Author:** Jordan KAMSU-KOM
 **Course:** The Future of AI for Finance and Accounting — Imagine (Johns Hopkins)
 **Lesson 3 — Code Technical Exercise**
-**Repo:** *(GitHub URL to be added after push)*
+**Repo:** https://github.com/KKJ-18/ai-finance-platform
 
 ---
 
