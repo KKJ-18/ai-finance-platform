@@ -1,0 +1,62 @@
+# =============================================================================
+# AI Finance Platform — Bank universe
+#
+# Each entry: yfinance ticker + SEC CIK (zero-padded to 10 digits) + category.
+# CIK is required for SEC EDGAR filings; non-US banks have null CIK
+# (filings only via local regulator — out of scope for this platform).
+# =============================================================================
+
+# SEC EDGAR requires a descriptive User-Agent on every request.
+# Override via the SEC_USER_AGENT environment variable.
+sec_user_agent: "Jordan KAMSU-KOM (Johns Hopkins / AI Finance) jordan@example.com"
+
+categories:
+
+  money_center_us:
+    description: "U.S. money-center & bulge-bracket banks (Lesson 2 universe)"
+    members:
+      - { ticker: JPM, cik: "0000019617", name: "JPMorgan Chase & Co." }
+      - { ticker: GS,  cik: "0000886982", name: "The Goldman Sachs Group, Inc." }
+      - { ticker: MS,  cik: "0000895421", name: "Morgan Stanley" }
+      - { ticker: BAC, cik: "0000070858", name: "Bank of America Corp." }
+      - { ticker: C,   cik: "0000831001", name: "Citigroup Inc." }
+
+  regional_us:
+    description: "U.S. super-regional banks"
+    members:
+      - { ticker: USB,  cik: "0000036104", name: "U.S. Bancorp" }
+      - { ticker: PNC,  cik: "0000713676", name: "The PNC Financial Services Group, Inc." }
+      - { ticker: TFC,  cik: "0000092230", name: "Truist Financial Corporation" }
+      - { ticker: COF,  cik: "0000927628", name: "Capital One Financial Corporation" }
+      - { ticker: FITB, cik: "0000035527", name: "Fifth Third Bancorp" }
+
+  trust_custody:
+    description: "Trust & custody banks"
+    members:
+      - { ticker: BK,  cik: "0001390777", name: "The Bank of New York Mellon Corporation" }
+      - { ticker: STT, cik: "0000093751", name: "State Street Corporation" }
+      - { ticker: NTRS, cik: "0000073124", name: "Northern Trust Corporation" }
+
+  european:
+    description: "European banks (ADR-listed; SEC filings via 20-F)"
+    members:
+      - { ticker: HSBC, cik: "0001089113", name: "HSBC Holdings plc" }
+      - { ticker: BCS,  cik: "0000312069", name: "Barclays plc" }
+      - { ticker: DB,   cik: "0001159508", name: "Deutsche Bank AG" }
+      - { ticker: UBS,  cik: "0001114446", name: "UBS Group AG" }
+      - { ticker: SAN,  cik: "0000891478", name: "Banco Santander, S.A." }
+
+  canadian:
+    description: "Canadian Big Six (selection)"
+    members:
+      - { ticker: RY,  cik: null, name: "Royal Bank of Canada" }
+      - { ticker: TD,  cik: null, name: "The Toronto-Dominion Bank" }
+      - { ticker: BMO, cik: null, name: "Bank of Montreal" }
+
+  benchmarks:
+    description: "Reference ETFs for sector context"
+    members:
+      - { ticker: XLF, cik: null, name: "Financial Select Sector SPDR" }
+      - { ticker: KRE, cik: null, name: "SPDR S&P Regional Banking ETF" }
+      - { ticker: KBE, cik: null, name: "SPDR S&P Bank ETF" }
+      - { ticker: SPY, cik: null, name: "SPDR S&P 500 ETF Trust" }
